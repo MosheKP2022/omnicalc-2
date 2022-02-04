@@ -16,7 +16,14 @@ class ApplicationController < ActionController::Base
       end
 
       def subtract_results
+        @num1 = params.fetch("first_num").to_f
+        @num2= params.fetch("second_num").to_f
+        @result = @num1-@num2
+        
+        
         render({ :template=> "calculation_templates/subtract_results.html.erb"})
+
+
         end
 
         def blank_multiply_form
