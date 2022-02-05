@@ -31,6 +31,9 @@ class ApplicationController < ActionController::Base
         end
 
         def multiply_results
+          @num1 = params.fetch("first_num").to_f
+          @num2= params.fetch("second_num").to_f
+          @result = @num1*@num2
           render ({ :template=> "calculation_templates/multiply_results"})
         end
 
@@ -39,6 +42,9 @@ class ApplicationController < ActionController::Base
         end
 
         def divide_results
+          @num1 = params.fetch("first_num").to_f
+          @num2= params.fetch("second_num").to_f
+          @result = @num1/@num2
           render ({ :template=> "calculation_templates/divide_results"})
         end
 end
