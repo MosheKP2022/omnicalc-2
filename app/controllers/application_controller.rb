@@ -54,7 +54,7 @@ class ApplicationController < ActionController::Base
       
           @street_address = params.fetch("user_street_address")
       
-          @maps_url = "https://maps.googleapis.com/maps/api/geocode/json?address=" + @street_address + "&key=AIzaSyD8RrOFB0dPsF-leqeFJdmX3yOvcQbfNyY"
+          @maps_url = "https://maps.googleapis.com/maps/api/geocode/json?address=" + @street_address + "&key=" + ENV.fetch("GMaps")
       
           @raw_json_string = open(@maps_url).read
       
